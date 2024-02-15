@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick y Morty Personajes Api</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <aside class="categorias">
+            <div class="categoria__grupo grupo__especie">
+                <h2>Species</h2>
+                <div class="botones__categorias">
+                    <button class="categoria--btn" id="human">Human</button>
+                    <button class="categoria--btn" id="alien">Alien</button>
+                    <button class="categoria--btn" id="robot">Robot</button>
+                    <button class="categoria--btn" id="animal">Animal</button>
+                    <button class="categoria--btn" id="mythological creature">Mythological creature</button>
+                    <button class="categoria--btn" id="unknown">Unknown</button>
+                </div>
+            </div>
+            <div class="categoria__grupo grupo__estado">
+                <h2>Status</h2>
+                <div class="botones__categorias">
+                    <button class="categoria--btn" id="alive">Alive</button>
+                    <button class="categoria--btn" id="dead">Dead</button>
+                    <button class="categoria--btn" id="unknown">Unknown</button>
+                </div>
+            </div>
+            <div class="categoria__grupo grupo__genero">
+                <h2>Gender</h2>
+                <div class="botones__categorias">
+                    <button class="categoria--btn" id="male">Male</button>
+                    <button class="categoria--btn" id="female">Female</button>
+                    <button class="categoria--btn" id="genderless">Genderless</button>
+                    <button class="categoria--btn" id="unknown">Unknown</button>
+                </div>
+            </div>
+            <div class="categoria__controles">
+                <button id="categoria__buscar" class="buscar-categoria button-edit">
+                    <i class="bi bi-search"></i>
+                </button>
+                <!-- <button id="aside__limpiar" class="button__reset button-edit">
+                    <i class="bi bi-trash"></i>
+                </button> -->
+            </div>
+
+            <button class="boton--general boton--categoria">
+                <i class="bi bi-arrow-left-circle-fill"></i>
+            </button>
+        </aside>
+        <div class="personajes__fondo">
+            <div class="buscar__personajes">
+                <div class="buscar__personajes--contenido">
+                    <h2>Rick and Morty Characters</h2>
+                    <form class="buscador">
+                        <input type="text" id="buscador__input" maxlength="20" placeholder="Rick Sanchez">
+                        <button type="submit" class="buscar button--buscar button-edit" id="buscador__enviar">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                    <span id="pagina"></span>
+                </div>
+                
+            </div>
+            <div class="titulos">
+                <span id="personajeTitulo"></span>
+                <span id="personajeTituloCategoria" class="personajeCategoria"></span>
+                <button class="todos__personajes button__reset button--buscar button-edit all--active">
+                    <i class="bi bi-trash"></i>
+                </button>
+                
+            </div>
+            
+            <div class="personajes__container" data-pagina="1" data-busqueda="total"></div>
+
+            <div class="controles">
+                <button class="izquierda">
+                    <i class="bi bi-arrow-left-square-fill"></i>
+                </button>
+                <button class="derecha">
+                    <i class="bi bi-arrow-right-square-fill"></i>
+                </button>
+            </div>
+    
+            <div class="footer">
+                <span class="desarrollado">Developed by Jose Contreras Martínez</span>
+                <button class="boton--general boton--abajo">
+                    <i class="bi bi-arrow-up-circle-fill"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+    <script src="main.js" type="module"></script>
+</body>
+</html>

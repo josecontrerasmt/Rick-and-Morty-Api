@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Roboto:wght@400;500;700;900&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+:root{
+    /* Colores  */
+    --fondo:#121212;
+    --fondoPersonaje:#1d1e1f;
+    --verde2:#06f877;
+    --fondoCategoria:#1d1c1c;
+    --fondoCategoriaMobile:#1d1c1c;
+}
+body{
+    color: white;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* Generales  */
+.personajes__fondo{
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--fondo);
+    padding: 20px 50px;
+    padding-left: 260px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.button-edit{
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 1.2em;
+}
+.button-edit .bi-search{
+    color: var(--verde2);
+}
+.button-edit .bi-trash{
+    color: red;
+}
+.Alive{
+    background-color: green;
+}
+.Dead{
+    background-color: red;
+}
+.unknown{
+    background-color: rgb(20, 20, 20);
+}
+.portal{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    animation: rotar 3s infinite linear;
+}
+@keyframes rotar {
+    to{
+        transform: rotate(360deg);
+    }
+}
+.all--active{
+    display: none;
+}
+
+.desarrollado{
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    opacity: 0.2;
+}
+
+.sinPersonajes-Container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.sinPersonajes__img{
+    width: 300px;
+    object-fit: cover;
+}
+
+/* Header  */
+
+.buscar__personajes{
+    background-image: url(imgs/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+}
+.buscar__personajes::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.63); /* Color negro con opacidad del 50% */
+}
+.buscar__personajes--contenido{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+
+    position: relative;
+}
+.buscar__personajes h2{
+    font-size: 2.3em;
+}
+.buscador{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#buscador__input{
+    width: 300px;
+    font-size: 18px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
+
+    border: 3px solid transparent;
+}
+#buscador__input:focus{
+    outline: none;
+    border-color: white;
+}
+
+
+
+/* Nombre del personaje  */
+
+.titulos{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+#personajeTitulo{
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 1.5em;
+}
+
+/* Todos los personajes  */
+
+.personajes__container{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: center;
+    gap: 25px;
+}
+.personaje{
+    width: 230px;
+    height: 370px;
+    background-color: var(--fondoPersonaje);
+    border-radius: 3px;
+    overflow: hidden;
+    border: 3px solid var(--verde2);
+    /* box-shadow: 0px 0px 10px 0px rgba(0, 255, 13, 0.3); */
+
+    position: relative;
+}
+.imgPersonaje{
+    width: 100%;
+    height: 65%;
+    object-fit: cover;
+}
+.personaje__info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 5px;
+}
+.nombre,.estado{
+    font-weight: 800;
+}
+.especie,.genero{
+    font-weight: 400;
+}
+/* Estado del personaje  */
+
+.estado{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Categorias  */
+.personajeCategoria{
+    display: none;
+}
+.boton--general{
+    border: none;
+    background-color: transparent;
+    color: var(--verde2);
+    cursor: pointer;
+}
+.boton--categoria{
+    position: absolute;
+    top: 260px;
+    right: -40px;
+    transition: 0.3s;
+    transform: rotate(180deg);
+    display: none;
+}
+.boton--general i{
+    font-size: 2.5em;
+}
+.categorias{
+    background-color: var(--fondoCategoria);
+    position: fixed;
+    height: 100vh;
+
+    width: 210px;
+    padding: 0 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    transition: 0.3s;
+}
+.categoria__grupo{
+    width: 100%;
+}
+.categoria__grupo h2{
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.botones__categorias{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.categoria--btn{
+    border: none;
+    background-color: var(--fondo);
+    cursor: pointer;
+    padding: 5px;
+    transition:  0.3s;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 0px 0px 3px 0px rgba(0, 255, 13, 0.3);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+.categoria__controles{
+    display: flex;
+    justify-content: space-evenly;
+}
+.button--active{
+    background-color: var(--verde2);
+    color: black;
+}
+
+/* Controles de Paginacion */
+.controles{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.controles button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.controles button i{
+    font-size: 3em;
+    color: var(--verde2);
+}
+
+/* Boton desplazamiento  */
+
+.footer{
+    position: relative;
+}
+.boton--abajo{
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+}
+
+@media screen and (max-width:1000px) {
+    .personajes__fondo{
+        padding: 20px;
+    }
+    .categorias{
+        z-index: 10;
+        transform: translateX(-100%);
+
+    }
+    .boton--open{
+        transform: translateX(-25px) rotate(0);
+    }
+    .categorias--open{
+        transform: translateX(0);
+    }
+    .boton--categoria{
+        display: unset;
+    }
+    .personajeCategoria{
+        display: unset;
+    }
+}
+@media screen and (max-width:480px){
+    .buscar__personajes h2{
+        font-size: 1.8em;
+    }
+    #buscador__input{
+        width: 220px;
+        font-size: 16px;
+    }
+}

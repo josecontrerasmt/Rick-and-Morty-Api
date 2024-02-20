@@ -292,7 +292,20 @@ body{
 
 .footer{
     position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
+.footer a{
+    text-decoration: none;
+
+}
+.footer a i{
+    font-size: 1.8em;
+    color: white;
+}
+
 .boton--abajo{
     position: absolute;
     bottom: 0;
